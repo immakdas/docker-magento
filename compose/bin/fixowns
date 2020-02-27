@@ -2,11 +2,11 @@
 echo "Correcting filesystem ownerships..."
 
 if [ -z "$1" ]; then
-  bin/rootnotty chown -R app:app /var/www/;
-  bin/rootnotty chmod -R 755 /var/www/;
+  bin/rootnotty chown -R app:app /var/www/
+  bin/rootnotty chmod -R 755 /var/www/
 else
-  bin/rootnotty chown -R app:app /var/www/html/$1;
-  bin/rootnotty chmod -R 755 /var/www/;
+  bin/rootnotty chown -R app:app /var/www/html/$1
+  bin/rootnotty chmod -R 755 /var/www/
 fi
 
 echo "Filesystem ownerships corrected."
