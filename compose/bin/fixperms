@@ -4,7 +4,7 @@ echo "Correcting filesystem permissions and debug folder..."
 if [ -z "$1" ]; then
   bin/clinotty find var vendor pub/static pub/media app/etc -type f -exec chmod u+w {} \;
   bin/clinotty find var vendor pub/static pub/media app/etc -type d -exec chmod u+w {} \;
-  bin/clinotty mkdir var/debug \;
+  bin/clinotty mkdir var/debug
   bin/clinotty find var vendor var/debug vendor/magento app/etc -type d -exec chmod u+w {} \;
   bin/clinotty chmod u+x bin/magento
 else
