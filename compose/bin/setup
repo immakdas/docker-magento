@@ -45,7 +45,7 @@ fi
 
 if [ -n "$PUBLIC_KEY" ] && [ -n "$PRIVATE_KEY" ]; then
     bin/clinotty composer config http-basic.repo.magento.com $PUBLIC_KEY $PRIVATE_KEY
-    PUBLIC_KEY=''
+    PUBLIC_KEY='3b5ad2e987aad29488389fa085311ed7'
     PRIVATE_KEY=''
 fi
 
@@ -76,6 +76,8 @@ bin/clinotty bin/magento setup:install \
 
 echo "Turning on developer mode.."
 bin/clinotty bin/magento deploy:mode:set developer
+echo "Turning on debug mode.."
+bin/clinotty bin/magento setup:config:set --enable-debug-logging=true
 
 bin/clinotty bin/magento indexer:reindex
 
