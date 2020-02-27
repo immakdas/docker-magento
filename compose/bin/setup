@@ -80,6 +80,8 @@ bin/clinotty bin/magento deploy:mode:set developer
 echo "Turning on debug mode.."
 bin/clinotty bin/magento setup:config:set --enable-debug-logging=true
 
+bin/clinotty bin/magento cache:flush
+
 bin/clinotty bin/magento indexer:reindex
 
 echo "Forcing deploy of static content to speed up initial requests..."
